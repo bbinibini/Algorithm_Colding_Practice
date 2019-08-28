@@ -4,7 +4,7 @@ import java.util.List;
 //hashmap http://tech.javacafe.io/2018/12/03/HashMap/
 
 
-public class Marathon{
+public class Marathon_Hash{
     public static void main(String[] args){
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"kiki", "eden"};

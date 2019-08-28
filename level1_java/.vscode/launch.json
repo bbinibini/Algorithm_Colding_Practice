@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FindKimInSeoul",
+            "request": "launch",
+            "mainClass": "FindKimInSeoul"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Marathon_Hash",
+            "request": "launch",
+            "mainClass": "Marathon_Hash"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Marathon",
             "request": "launch",
             "mainClass": "Marathon"
