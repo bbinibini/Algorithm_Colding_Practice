@@ -6,6 +6,24 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Marathon",
+            "request": "launch",
+            "mainClass": "Marathon"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exam",
+            "request": "launch",
+            "mainClass": "Exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - 모의고사",
+            "request": "launch",
+            "mainClass": "모의고사"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PlusStringNumber",
             "request": "launch",
             "mainClass": "PlusStringNumber"
