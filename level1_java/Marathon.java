@@ -1,39 +1,46 @@
 import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
+//hashmap http://tech.javacafe.io/2018/12/03/HashMap/
+
 
 public class Marathon{
     public static void main(String[] args){
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"kiki", "eden"};
-        solution(participant, completion);
+        String answer = solution(participant, completion);
+        System.out.println(answer);
     }
 
-    public static String solution(String[] participant, String[] completion) {
-        String answer = "";
+    public static String solution(String[] participant, String[] completion){
 
-        HashMap<Integer, String> map = new HashMap<Integer, String>();
-        for(int i=0; i< participant.length; i++){
-            map.put(i, participant[i]);
-        }
+        Arrays.sort(participant);
+        Arrays.sort(completion);
 
         for(int i=0; i<completion.length; i++){
-            if(map.containsValue(completion[i])){
-                int key = getKey(map, completion[i]);
-                map.remove(key);
+            if(!participant[i].equals(completion[i])){
+                return participant[i];
             }
         }
 
-        answer = String.valueOf(map.values().toArray()[0]);
-
-        return answer;
+        return participant[completion.length];
     }
 
-    public static int getKey(HashMap<Integer, String> m, Object value) { 
-        for(int o: m.keySet()) { 
-            if(m.get(o).equals(value)) { 
-                return o; 
-            } 
-        } 
-        return 0; 
+    public String solution_hashmap(String[] participant, String[] completion) {
+        String answer = "";
+        HashMap<String, Integer> hm = new HashMap<>();
+        //getOrDefault(key, defaultValue)
+        //처음인사람 = 0 , 중복 = 값반환 + 1
+        for (String player : participant) hm.put(player, hm.getOrDefault(player, 0) + 1);
+        //key값으로 get해서, -1씩 수를 줄여나간다.
+        for (String player : completion) hm.put(player, hm.get(player) - 1);
+
+        for (String key : hm.keySet()) {
+            if (hm.get(key) != 0){ //value가 0이 아니라면
+                answer = key;
+            }
+        }
+        return answer;
     }
 
 }
