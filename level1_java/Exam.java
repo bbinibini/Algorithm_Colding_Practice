@@ -16,6 +16,34 @@ public class Exam{
         	System.out.println(a);	
         }
     }
+    
+    public int[] solution_(int[] answer) {
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] c = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+        
+        //각 int값으로 하면 더 빨라짐
+        int[] score = new int[3];
+        
+        //이중 for문 사용하지 않고! 바로 체크
+        for(int i=0; i<answer.length; i++) {
+            if(answer[i] == a[i%a.length]) {score[0]++;}
+            if(answer[i] == b[i%b.length]) {score[1]++;}
+            if(answer[i] == c[i%c.length]) {score[2]++;}
+        }
+        
+        //3개중 max값 구하는 법
+        int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
+        
+        //for문 사용하지 않고! 순차적으로 max값 비교해서 list에 넣기
+        ArrayList<Integer> list = new ArrayList<>();
+        if(maxScore == score[0]) {list.add(1);}
+        if(maxScore == score[1]) {list.add(2);}
+        if(maxScore == score[2]) {list.add(3);}
+        
+        //Integer ArrayList를 array로 변경!
+        return list.stream().mapToInt(i->i.intValue()).toArray();
+    }
 
     public static int[] solution(int[] answer) {
         ArrayList<Integer> return_answer = new ArrayList<>();
@@ -31,19 +59,7 @@ public class Exam{
         		}
         	}
         }
-        
-        //max 값 구하기
-        //int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
-        
-        //ArrayList로 .. ! 
-//        ArrayList<Integer> list = new ArrayList<>();
-//        if(maxScore == score[0]) {list.add(1);}
-//        if(maxScore == score[1]) {list.add(2);}
-//        if(maxScore == score[2]) {list.add(3);}
-        
-        //Integer Arraylist array로 변경
-//        return list.stream().mapToInt(i->i.intValue()).toArray();
-//        
+     
         int max = 0;
         for(int i=0; i<map.size(); i++) {
         	if(max < map.get(i)) {
