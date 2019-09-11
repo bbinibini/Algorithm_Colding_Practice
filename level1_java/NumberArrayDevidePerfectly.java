@@ -28,6 +28,8 @@ public class NumberArrayDevidePerfectly {
 	      Arrays.sort(return_answer);
 	      
 	      return return_answer;
+	      
+	      //return Arrays.stream(array).filter(factor -> factor % divisor == 0).toArray();
 	  }
 
 }
