@@ -1,42 +1,31 @@
-import java.util.*;
+import java.util.Stack;
+import java.util.Scanner;
 
 public class Stack_10828 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		List list = new ArrayList();
+		Stack stack = new Stack();
 		int length = sc.nextInt();
 		for(int i=0 ; i<length; i++) {
 			String input = sc.next();
 			if(input.equals("push")) {
-				list.add(sc.nextInt());
+				stack.push(sc.nextInt());
 			}
 			if(input.equals("pop")) {
-				if(list.size()==0) {
-					System.out.println(-1);
-				} else {
-					System.out.println(list.get(list.size()-1));
-					list.remove(list.size()-1);
-						
-				}
+				System.out.println(stack.pop());
+				// empty 체크 못함
 			}
 			if(input.equals("size")){
-				System.out.println(list.size());
+				System.out.println(stack.size());
 			}
 			if(input.equals("empty")){
-				if(list.size()==0) {
-					System.out.println(1);
-				} else {
-					System.out.println(0);
-				}
+				System.out.println(stack.empty());
+				//true, false로 반환
 			}
 			if(input.equals("top")) {
-				if(list.size()==0) {
-					System.out.println(-1);
-				} else {
-					System.out.println(list.get(list.size()-1));
-				}
+				System.out.println(stack.peek());
 			}
 		}
 		sc.close();
