@@ -20,7 +20,6 @@ public class Printer{
     	int i = 1;
     	while(!queue.isEmpty()) {
     		if(queue.peek().priority == priorityqueue.peek().priority) {
-    			System.out.println("출력 - " + queue.peek().location + " : " + queue.peek().priority);
     			if(queue.peek().location == location) {
     				return i;
     			}
@@ -30,7 +29,6 @@ public class Printer{
     			}
     			i++;
     		} else {
-    			System.out.println("뒤로 넣기 - " + queue.peek().location + " : " + queue.peek().priority);
     			Printer_Request pr = queue.poll();
     			queue.offer(pr);
     		}
