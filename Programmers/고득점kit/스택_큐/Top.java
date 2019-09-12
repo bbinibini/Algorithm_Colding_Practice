@@ -22,8 +22,6 @@ public class Top {
         while(!stack.isEmpty()) {
         	int target = (int) stack.pop();
         	for(int i=stack.size()-1; i>=0; i--) {
-        		System.out.println("target : " + target + " 비교 : " + (int)stack.get(i));
-        		System.out.println("i : " + i + " idx : " + (i+1) );
         		if(target < (int)stack.get(i)) {
         			answer[idx] = i+1;
         			break;
@@ -31,8 +29,7 @@ public class Top {
         	}
         	idx--;
         }
-       
-        
+
         return answer;
     }
 
