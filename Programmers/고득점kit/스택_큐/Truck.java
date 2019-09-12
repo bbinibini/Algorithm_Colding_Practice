@@ -4,9 +4,9 @@ public class Truck {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Truck truck = new Truck();
-		int bridge_length = 2;
-		int weight = 10;
-		int[] truck_weights = {7,4,5,6};
+		int bridge_length = 100;
+		int weight = 100;
+		int[] truck_weights = {10};
 		System.out.println(truck.solution(bridge_length, weight, truck_weights));
 	}
 	
@@ -16,7 +16,11 @@ public class Truck {
         for(int tw : truck_weights) {
         	queue.offer(tw);
         }
-        if()
+        
+        while(!queue.isEmpty()) {
+        	int truck_w = 0;
+        	
+        }
         
         return answer;
     }
