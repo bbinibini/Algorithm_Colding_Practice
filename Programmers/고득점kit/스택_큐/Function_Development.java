@@ -1,6 +1,9 @@
 import java.util.*;
 
 public class Function_Development {
+	
+//	int[] dayOfend = new int[100];
+//	return Arrays.stream(dayOfend).filter(i -> i!=0).toArray();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
